@@ -50,7 +50,7 @@ void setup() {
     bridgeRails_center = loadImage("images/bridgeRails_center.png");
     bridgeRails_w      = loadImage("images/bridgeRails_w.png");
     bridgeRails_e      = loadImage("images/bridgeRails_e.png");
-    ladder             = loadImage("ladder.png");
+    ladder             = loadImage("images/ladder.png");
     lava[0]            = loadImage("images/lava1.png");
     lava[1]            = loadImage("images/lava2.png");
     lava[2]            = loadImage("images/lava3.png");
@@ -118,11 +118,16 @@ void draw() {
 
     myWorld.checkKeys();
     myWorld.draw();
-    myPlayer.checkKeys();
-    myPlayer.move();
-    myPlayer.checkWalls();
-    myPlayer.checkGravity();
-    myPlayer.draw();
+    if (!(myKbd.holdingS || myKbd.holdingW)) {
+        myPlayer.checkKeys();
+        myPlayer.move();
+        myPlayer.checkWalls();
+        myPlayer.checkGravity();
+        myPlayer.draw();
+    }
+    else {
+        myPlayer.stickToTile();   
+    }
 
     popMatrix();
 }

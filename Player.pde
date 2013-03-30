@@ -37,6 +37,7 @@ class Player {
         if (myKbd.holdingUp && onGround) {
             velocity.y = -20;
         }
+        
         velocity.x *= FRICTION;
     }
 
@@ -115,6 +116,11 @@ class Player {
                 velocity.y += GRAVITY_POWER;
             }
         }
+    }
+
+    void stickToTile() {
+        location.x = myWorld.tileAt(location).getX();
+        location.y = myWorld.tileAt(location).getY();
     }
 
     void draw() {

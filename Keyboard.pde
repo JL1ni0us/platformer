@@ -14,7 +14,7 @@ class Keyboard {
     Boolean holdingUp, holdingDown, holdingRight, holdingLeft, holdingSpace, holdingW, holdingS;
 
     Keyboard() {
-        holdingUp = holdingDown = holdingRight = holdingLeft = holdingSpace = holdingS=holdingW = false;
+        holdingUp = holdingDown = holdingRight = holdingLeft = holdingSpace = holdingS = holdingW = false;
     }
 
     /* The way that Processing, and many programming languages/environments, deals with keys is
@@ -46,8 +46,6 @@ class Keyboard {
         if (key == KeyEvent.VK_W) {
             holdingW = true;
         }
-        
-        
     }
     void releaseKey(int key) {
         if (key == KeyEvent.VK_UP) {

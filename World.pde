@@ -40,7 +40,10 @@ class World {
     Tile tileAt(PVector loc) {
         int row = (int)(loc.y/GRID_SIZE);
         int col = (int)(loc.x/GRID_SIZE);
-        return map[row][col];
+        if (row < map.length && col < map[0].length)
+            return map[row][col];
+        else
+            return null;
     }
 
     float topOfSquare(PVector thisPosition) {

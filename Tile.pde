@@ -23,6 +23,14 @@ abstract class Tile {
         return isWall;
     }
 
+    float getX() {
+        return col * GRID_SIZE;        
+    }
+    
+    float getY() {
+        return row * GRID_SIZE;
+    }
+
     Tile nTile() {
         if (row != 0)
             return myWorld.map[row - 1][col];
